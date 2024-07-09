@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Itinerary from './Itinerary';
+import PackingList from './PackingList';
 const LLMRequest = () => {
   const [llm_prompt, setLlmPrompt] = useState('');
   const [llm_response, setLlmResponse] = useState('');
@@ -164,11 +167,13 @@ const LLMRequest = () => {
   }, []);
 
   return (
+  <Router>
     <div className='Top-Container'>
       <div className='Header'>
         <div className='Title'>
           <h2>Holid.AI</h2>
           <i>your AI-enabled holiday planner!</i>
+          {<div>{current_time}</div>}
         </div>
         <div className='Questionnaire'>
           <div className='Entry'>
@@ -193,10 +198,15 @@ const LLMRequest = () => {
         </div>
         {/* {llm_response.length > 50 ? <div>{llm_response}</div> : <p>wait</p>} */}
         {<div>{llm_response}</div>}
-        {<div>{current_time}</div>}
         {<div>{llama_response}</div>}
       </div>
+      <Routes>
+          <Route path="/" element={<p></p>} />
+          <Route path="/itinerary" element={<Itinerary />} />
+          <Route path="/packinglist" element={<PackingList />} />
+      </Routes>
     </div>
+  </Router>
   );
 }
 export default LLMRequest;
