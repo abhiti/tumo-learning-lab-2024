@@ -1,3 +1,91 @@
+html, body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.Top-Container {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF6EF;
+  height: 100%;
+}
+
+.Top-Container .Header{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.Top-Container .Header .Title{
+  display: flex;
+  flex-direction: column;
+  margin: 4%;
+  width: 50%;
+}
+
+.Top-Container .Header .Title h2{
+  font-size: 60px;
+  margin: 0%;
+}
+
+.Top-Container .Header .Questionnaire{
+  display: flex;
+  flex-direction: column;
+  margin: 4%;
+  width: 50%;
+}
+
+.Top-Container .Header .Questionnaire .Entry{
+  display: flex;
+  flex-direction: row;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  justify-content: space-between;
+}
+
+.Top-Container .Header .Questionnaire .Entry b{
+  margin-right: 1%;
+}
+
+.Top-Container .Header .Questionnaire .Entry textarea{
+  background-color: #F8AA6D;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border-style: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 50%;
+  font-weight: bold;
+}
+
+.Top-Container .Content{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 4%;
+}
+
+.Top-Container .Content .Button-Container{
+  display: flex;
+  flex-direction: row;
+}
+
+.Top-Container .Content button{
+  background-color: #FF933F;
+  margin: 2%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border-style: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  padding: 1%;
+  cursor: pointer;
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +124,9 @@
     transform: rotate(360deg);
   }
 }
+
+/* 
+curl http://localhost:11434/api/generate -d '{
+  "model": "llama3",
+  "prompt": "respond with just 'hello'"
+}' */
